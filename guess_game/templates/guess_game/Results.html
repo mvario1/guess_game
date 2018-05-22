@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+
+{% block content %}
+
+        Your decision was: {{ player.guess }}
+
+        The random number is: {{ player.toguess }}
+
+        Your difference is: {{ diff }}
+
+        Your final earning is 100 - {{ diff }} = {{ player.payoff }}
+
+    {% next_button %}
+{% endblock %}
+
+

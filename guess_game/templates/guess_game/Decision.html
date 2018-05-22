@@ -1,0 +1,17 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Decision
+{% endblock %}
+
+{% block content %}
+
+    What is your guess?
+
+    {% formfield player.guess %}
+
+
+    {% next_button %}
+
+{% endblock %}
