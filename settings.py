@@ -22,6 +22,11 @@ SESSION_CONFIGS = [
         'display_name': "Guess game",
         'num_demo_participants': 1,
         'app_sequence': ['guess_game'],
+    },{
+        'name': 'dictator_game',
+        'display_name': "dictator game",
+        'num_demo_participants': 2,
+        'app_sequence': ['dictator_game'],
     },
 
 ]

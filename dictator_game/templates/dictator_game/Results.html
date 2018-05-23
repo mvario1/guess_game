@@ -1,0 +1,55 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block content %}
+
+    <div class="alert alert-primary" role="alert">
+  Your are a {{ player.role }} and got {{ player.payoff }}
+</div>
+
+
+    The Dictators payoff is: {{ dictator_payoff }}
+
+    The Receivers payoff is: {{ receiver_payoff }}
+
+
+
+<table class="table table-hover table-striped">
+    <tr class ="thead-danger">
+        <td>Your role was: </td>
+      <th scope="col">{{ player.role }}</th>
+     </tr>
+    <tr>
+        <td>
+            {% if player.role == 'dicator' %}
+                Your
+            {% else %}
+                Dictator's
+            {% endif %}
+            initial endowment was:
+        </td>
+    <th>{{ Constants.Endowment }}</th>
+    </tr>
+    <tr>
+        {% if player.role == 'dictator' %}
+            <td> You decided to send to a Receiver:</td>
+        {% else %}
+            <td>Dictator sent you</td>
+        {% endif %}
+        <th>{{ group.dg_decision }}</th>
+    <tr>
+    <tr class="table-sucess">
+        <td>Your payoff is:</td>
+        <th>{{ player.payoff }}</th>
+    </tr>
+</table>
+
+
+    {% next_button %}
+{% endblock %}
+
+

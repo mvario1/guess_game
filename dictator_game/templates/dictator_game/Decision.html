@@ -1,0 +1,15 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Decision
+{% endblock %}
+
+{% block content %}
+
+    You are assigned Dictator. How much will you give to the receiver?
+
+    {% formfield group.dg_decision %}
+    {% next_button %}
+
+{% endblock %}
