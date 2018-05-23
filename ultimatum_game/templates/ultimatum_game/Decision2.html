@@ -1,0 +1,20 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Decision from Agent 2
+{% endblock %}
+
+{% block content %}
+
+    You are the receiver.
+
+    The sender offers you {{ group.dg_decision }}
+
+    Do you accept this offer ?
+
+    {% formfield group.response %}
+
+    {% next_button %}
+
+{% endblock %}

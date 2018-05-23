@@ -24,10 +24,22 @@ SESSION_CONFIGS = [
         'app_sequence': ['guess_game'],
     },{
         'name': 'dictator_game',
-        'display_name': "dictator game",
+        'display_name': "dictator game - baseline",
         'num_demo_participants': 2,
         'app_sequence': ['dictator_game'],
-    },
+        'gender': False,
+    },{
+        'name': 'dictator_game_gender',
+        'display_name': "dictator game - gender",
+        'num_demo_participants': 2,
+        'app_sequence': ['dictator_game'],
+        'gender': True,
+    }, {
+        'name': 'ultimatum_game',
+        'display_name': "Ultimatum game",
+        'num_demo_participants': 2,
+        'app_sequence': ['ultimatum_game'],
+    }
 
 ]
 

@@ -1,0 +1,18 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+
+{% block content %}
+
+    The payoff of the sender is : {{ sender_payoff }}
+    The payoff of the receiver is: {{ receiver_payoff }}
+
+
+    {% next_button %}
+{% endblock %}
+
+

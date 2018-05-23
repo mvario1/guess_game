@@ -4,12 +4,17 @@ from .models import Constants
 
 
 class Intro(Page):
-    pass
+    form_model = 'player'
+    form_fields = ['gender']
 
 
 class Decision(Page):
     form_model = 'group'
     form_fields = ['dg_decision']
+
+    def vars_for_template(self):
+        receiver = self.group.get_player_by_role('receiver')
+        return {'receiver_gender':receiver.get_gender_display()}
 
     def is_displayed(self):
         return self.player.role() == 'dictator'
@@ -30,6 +35,7 @@ class Results(Page):
 
 page_sequence = [
     Intro,
+    WaitPage,
     Decision,
     WP,
     Results

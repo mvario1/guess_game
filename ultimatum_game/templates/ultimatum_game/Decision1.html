@@ -2,20 +2,15 @@
 {% load otree static %}
 
 {% block title %}
-    Decision
+    Decision from Sender
 {% endblock %}
 
 {% block content %}
 
-    You are assigned Dictator. How much will you give to the receiver?
-
-    {% if session.config.gender %}
-
-    the gender of the receiver is {{ receiver_gender }}
-
-    {% endif %}
+    You are assigned as the sender. How much will you give to the receiver?
 
     {% formfield group.dg_decision %}
+
     {% next_button %}
 
 {% endblock %}

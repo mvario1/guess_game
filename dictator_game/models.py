@@ -37,6 +37,13 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
+
+    gender = models.IntegerField(choices=
+                                 ((0,'Female'),
+                                  (1,'Male')),
+                                 widget=widgets.RadioSelectHorizontal,
+                                 )
+
     def role(self):
         if self.id_in_group==1:
             return 'dictator'
