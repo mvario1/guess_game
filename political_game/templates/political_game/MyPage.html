@@ -1,0 +1,23 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Political question
+{% endblock %}
+
+{% block content %}
+
+    Which political party do you prefer ?
+
+<img src="{% static image1  %}"/>
+<img src="{% static image2  %}" height="150"/>
+
+    {% formfield player.parties %}
+
+
+    How do you define your own political position (from left to right)?
+     {% formfield player.political_views %}
+
+    {% next_button %}
+
+{% endblock %}

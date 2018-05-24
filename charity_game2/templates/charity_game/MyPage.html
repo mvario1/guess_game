@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Charity
+{% endblock %}
+
+{% block content %}
+    <h5>Your endowment is {{ player.endowment }} </h5>
+    <h5>To which association are you going to send money ?</h5>
+
+<img src="{% static image1  %}" height="150 "/>
+<img src="{% static image2  %}" height="150 "/>
+
+    {% formfield player.decision label="" %}
+
+
+
+    {% next_button %}
+
+{% endblock %}

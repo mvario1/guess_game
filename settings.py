@@ -39,6 +39,16 @@ SESSION_CONFIGS = [
         'display_name': "Ultimatum game",
         'num_demo_participants': 2,
         'app_sequence': ['ultimatum_game'],
+    },{
+        'name': 'political_game',
+        'display_name': "Political game",
+        'num_demo_participants': 1,
+        'app_sequence': ['political_game'],
+    },{
+        'name': 'charity_game',
+        'display_name': "Charity game",
+        'num_demo_participants': 1,
+        'app_sequence': ['charity_game'],
     }
 
 ]
