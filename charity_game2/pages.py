@@ -18,9 +18,10 @@ class MyPage(Page):
             image2 = "charity_game/b_pers.png"
         else:
             image2 = "charity_game/b_gen.png"
-
+        foundations = ['SickKids', 'WellChilds']
         return {'image1': image1,
-                'image2': image2}
+                'image2': image2,
+                "foundations":foundations}
 
     def donation1_max(self):
         return self.player.endowment
@@ -40,6 +41,7 @@ class MyPage(Page):
             self.player.donation1 = random.randint(Constants.minguess,
                                                    self.player.endowment)
             self.player.donation2 = self.player.endowment - self.player.donation1
+
 
 
 class ResultsWaitPage(WaitPage):

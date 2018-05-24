@@ -12,8 +12,17 @@
     <img src="{% static image1 %}" height="150 "/>
     <img src="{% static image2 %}" height="150 "/>
 
-    {% formfield player.donation1 label='donation 1'%}
-    {% formfield player.donation2 label='donation 2'%}
+    {% formfield player.donation1 label='donation 1' %}
+    {% formfield player.donation2 label='donation 2' %}
+
+
+    <table class="table table-hover table-striped">
+        {% for i in foundations %}
+            <tr>
+                <td>{{ i }}</td>
+            </tr>
+        {% endfor %}
+    </table>
 
 
     {% next_button %}
