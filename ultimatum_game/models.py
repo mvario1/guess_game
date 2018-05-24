@@ -46,7 +46,7 @@ class Group(BaseGroup):
             sender.payoff = Constants.endowment - self.dg_decision
             receiver.payoff = self.dg_decision
         else:
-            sender.payoff = 0,
+            sender.payoff = 0
             receiver.payoff = 0
 
 
@@ -58,3 +58,5 @@ class Player(BasePlayer):
             return 'sender'
         else:
             return 'receiver'
+
+    odd_negative = models.IntegerField()

@@ -11,7 +11,7 @@ Your app description
 
 
 class Constants(BaseConstants):
-    name_in_url = 'charity_game'
+    name_in_url = 'charity_game2'
     players_per_group = None
     num_rounds = 1
     minguess = 0
@@ -40,4 +40,11 @@ class Player(BasePlayer):
     decision = models.StringField(widget=widgets.RadioSelect, choices=['SickKids Foundation',
                                                                        'WellChild Foundation'])
     endowment = models.IntegerField(min=Constants.minguess,
+                                    max=Constants.maxguess)
+
+
+    donation1 = models.IntegerField(min=Constants.minguess,
+                                    max=Constants.maxguess)
+
+    donation2 = models.IntegerField(min=Constants.minguess,
                                     max=Constants.maxguess)

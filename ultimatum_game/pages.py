@@ -4,7 +4,16 @@ from .models import Constants
 
 
 class Intro(Page):
-    pass
+   # timeout_seconds = 10
+
+   form_model = 'player'
+   form_fields = ['odd_negative']
+
+   def odd_negative_error_message(self, value):
+       print('value is', value)
+       if value != 10:
+           return 'Wrong answer'
+
 
 class Decision1(Page):
 

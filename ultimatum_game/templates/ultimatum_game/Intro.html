@@ -7,12 +7,11 @@
 
 {% block content %}
 
-    There are two agents in the game: the sender and receiver.
+    {% include 'ultimatum_game/InstructionsBlock.html' %}
 
-    The sender will receive an endowment of 100 points. He can decide how much he will distribute to the receiver.
+what is the receiver's payoff if the sender sends 10 points and the receiver accepts it?
 
-    The receiver can then accept or reject the offer made by the sender. If the receiver rejects, both counterparties will get zero points.
-
+     {% formfield player.odd_negative label='control question'%}
 
 
     {% next_button %}
