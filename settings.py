@@ -54,6 +54,11 @@ SESSION_CONFIGS = [
         'display_name': "Charity game2",
         'num_demo_participants': 1,
         'app_sequence': ['charity_game2'],
+    },{
+        'name': 'publicgood_game',
+        'display_name': "Public Good Game",
+        'num_demo_participants': 3,
+        'app_sequence': ['publicgood_game'],
     }
 
 ]

@@ -1,0 +1,19 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Introduction (Round {{ player.round_number }} out of {{ Constants.num_rounds }})
+{% endblock %}
+
+{% block content %}
+    {#    <div class="btn btn-lg btn-success">My wonderful new button</div>#}
+    {#    <div class="Marco">I am Swiss</div>#}
+
+
+
+    {% include 'publicgood_game/Intro_block.html' %}
+
+    {% next_button %}
+
+{% endblock %}
+

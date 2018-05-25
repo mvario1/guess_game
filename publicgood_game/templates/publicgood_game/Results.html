@@ -1,0 +1,108 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Results (Round {{ player.round_number }} out of {{ Constants.num_rounds }})
+{% endblock %}
+
+{% block content %}
+
+    {#    Your donation was {{ player.donation }}.#}
+    {##}
+    {#    Total donation from all participants is {{ group.totaldonation }}.#}
+    {#    Total donation from all participants is {{ t }}.#}
+    {##}
+    {#    Your payoff is {{ player.payoff }} in this round.#}
+
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Information about this round</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">Your donation</th>
+            <td>{{ player.donation }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Total donation from all participants</th>
+            <td>{{ group.totaldonation }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Share that each participant receives</th>
+            <td>{{ group.share }}</td>
+        </tr>
+        </tr>
+        <tr>
+            <th scope="row">Your payoff</th>
+            <td>{{ player.payoff }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">History</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr>
+            <th scope="row">Your payoff(s)</th>
+
+            {% for i in  player.in_previous_rounds %}
+                <td> {{ i.payoff }} </td>
+            {% endfor %}
+        </tr>
+        </tbody>
+    </table>
+
+
+    <div id="chart" style="min-width: 310px; height: 400px;">
+
+    </div>
+
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="row">Your total payoff so far</th>
+            <td>{{ participant.payoff }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    {% next_button %}
+{% endblock %}
+
+
+{% block scripts %}
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+
+    <script>
+        $(function () {
+            $('#chart').highcharts({
+                title: {text: "Average payoff from all participants"},
+                series:{{ series|json }}
+            });
+
+        });
+    </script>
+
+
+    {#    <script>#}
+    {##}
+    {#        $('div.btn').on('click', function () {#}
+    {#            $('div.Marco').html('Yes that is true!')#}
+    {##}
+    {#alert('Hello St.Gallen !!!');#}
+    {#        });#}
+    {#    </script>#}
+{% endblock %}
